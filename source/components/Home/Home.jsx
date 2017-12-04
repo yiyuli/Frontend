@@ -9,26 +9,29 @@ class Home extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            data: JSON.parse("[{\"Name\": \"UIC\", \"Credit\": \"No\", \"Four\": \"No\", \"Two\": \"No\", \"State\": \"Illinois\", \"Art\": \"No\", \"Description\": \"sss\"}]"),
+            data: '',
             loading: false,
             selectedState: 'State',
-            selectedDegree: 'Degree',
+            selectedTwo: 'Two',
+            selectedFour: 'Four',
+            selectedArt: 'Art',
             selectedCredit: 'Credit'
         };
-        this.handleStateChange = this.handleStateChange.bind(this);
+        this.componentWillMount = this.componentWillMount.bind(this);
     }
 
-    // componentWillMount() {
-    //     this.setState({loading: true});
-    //     axios.get('localhost:5000/programs').then(function (response) {
-    //         this.setState({
-    //             loading: false,
-    //             data: response
-    //         });
-    //     }.bind(this)).catch(function (error) {
-    //         console.log(error);
-    //     });
-    // }
+    componentWillMount() {
+        this.setState({loading: true});
+        axios.get('http://localhost:5000/').then(function (response) {
+            console.log(response);
+            this.setState({
+                loading: false,
+                data: response.data
+            });
+        }.bind(this)).catch(function (error) {
+            console.log(error);
+        });
+    }
 
     handleStateChange(changeEvent) {
         this.setState ({
@@ -42,18 +45,30 @@ class Home extends Component {
         })
     }
 
-    handleDegreeChange(changeEvent) {
+    handleTwoChange(changeEvent) {
         this.setState ({
-            selectedDegree: changeEvent.target.value
+            selectedTwo: changeEvent.target.value
+        })
+    }
+
+    handleFourChange(changeEvent) {
+        this.setState ({
+            selectedFour: changeEvent.target.value
+        })
+    }
+
+    handleArtChange(changeEvent) {
+        this.setState ({
+            selectedArt: changeEvent.target.value
         })
     }
 
     render() {
         if (this.state.loading) {
-            return
+            return(
                 <div >
                     <div>Loading</div>
-                </div>
+                </div>)
         }
         return (
             <div >
@@ -87,20 +102,12 @@ class Home extends Component {
                 </nav>
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3">
-                            <h1 className="my-4">Shop Name</h1>
-                            <div className="list-group">
-                                <a href="#" className="list-group-item">Category 1</a>
-                                <a href="#" className="list-group-item">Category 2</a>
-                                <a href="#" className="list-group-item">Category 3</a>
-                            </div>
-                        </div>
-                        <div className="col-lg-9">
+                        <div className="col-lg-12">
                             <div className="ad_img">
                                 <img src="https://i.imgur.com/hFIg1W1.jpg" className="img-responsive"/>
                             </div>
                             <div className="row search-row">
-                                <div className="col-lg-2">
+                                <div className="col-lg-1">
                                     <select className="form-control" onChange={this.handleStateChange.bind(this)}>
                                         <option value="State" selected>State</option>
                                         <option value="Illinois">Illinois</option>
@@ -108,23 +115,39 @@ class Home extends Component {
                                         <option value="Texas">Texas</option>
                                     </select>
                                 </div>
-                                <div className="col-lg-2">
+                                <div className="col-lg-1">
                                     <select className="form-control" onChange={this.handleCreditChange.bind(this)}>
                                         <option value="Credit" selected>Credit</option>
-                                        <option value="Non-Credit">Non-Credit</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
                                     </select>
                                 </div>
                                 <div className="col-lg-2">
-                                    <select className="form-control" onChange={this.handleDegreeChange.bind(this)}>
-                                        <option value="Degree" selected>Degree</option>
-                                        <option value="Bachalor">Bachalor</option>
-                                        <option value="Master">Master</option>
-                                        <option value="PHD">PHD</option>
+                                    <select className="form-control" onChange={this.handleFourChange.bind(this)}>
+                                        <option value="Four" selected>Four Year Program</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div className="col-lg-2">
+                                    <select className="form-control" onChange={this.handleTwoChange.bind(this)}>
+                                        <option value="Two" selected>Two Year Program</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                                <div className="col-lg-2">
+                                    <select className="form-control" onChange={this.handleArtChange.bind(this)}>
+                                        <option value="Art" selected>Arts and others</option>
+                                        <option value="true">Yes</option>
+                                        <option value="false">No</option>
                                     </select>
                                 </div>
                                 <div className="col-lg-1">
+
                                 </div>
-                                <div className="col-lg-5">
+
+                                <div className="col-lg-3">
                                     <div className="input-group search-bar">
                                         <input type="text" className="form-control" placeholder="Search"/>
                                     </div>
@@ -134,8 +157,10 @@ class Home extends Component {
                                 <Items
                                     data={this.state.data}
                                     selectedCredit={this.state.selectedCredit}
-                                    selectedDegree={this.state.selectedDegree}
+                                    selectedTwo={this.state.selectedTwo}
                                     selectedState={this.state.selectedState}
+                                    selectedFour={this.state.selectedFour}
+                                    selectedArt={this.state.selectedArt}
                                 />
 
                         </div>

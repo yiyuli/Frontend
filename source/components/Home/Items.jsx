@@ -10,13 +10,18 @@ class Items extends Component {
     render() {
         var data = this.props.data;
         var selectedCredit = this.props.selectedCredit;
-        var selectedDegree = this.props.selectedDegree;
+        var selectedTwo = this.props.selectedTwo;
+        var selectedFour = this.props.selectedFour;
+        var selectedArt = this.props.selectedArt;
         var selectedState = this.props.selectedState;
         var tmp = []
+        console.log(data)
         data.map((item) => {
-            if ((item['Credit'] === selectedCredit || selectedCredit === 'Credit') &&
-                (item['State'] === selectedState || selectedState === 'State') &&
-                (item['Degree'] === selectedDegree || selectedDegree === 'Degree')) {
+            if ((item['for_credit'] == selectedCredit || selectedCredit === 'Credit') &&
+                (item['state'] === selectedState || selectedState === 'State') &&
+                (item['four_year'] == selectedFour || selectedFour === 'Four') &&
+                (item['arts_program'] == selectedArt || selectedArt === 'Art') &&
+                (item['two_year'] == selectedTwo || selectedTwo === 'Two')) {
                 tmp.push(item);
             }
         });
@@ -27,20 +32,20 @@ class Items extends Component {
                     <div
                         className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
                         <div className="d-flex w-100 justify-content-between">
-                            <h6 className="mb-1 col-lg-6">{item['Name']}</h6>
-                            <small className="col-lg-6">Arts and others: {item['Art']}</small>
+                            <h6 className="mb-1 col-lg-6">{item['name']}</h6>
+                            <small className="col-lg-6">Arts and others: {item['arts_program'].toString()}</small>
                         </div>
                         <div className="d-flex w-100 justify-content-between">
-                            <small className="mb-1 col-lg-6">{item['State']}</small>
-                            <small className="col-lg-6">: {item['Four']}</small>
+                            <small className="mb-1 col-lg-6">{item['state']}</small>
+                            <small className="col-lg-6">Four year program: {item['four_year'].toString()}</small>
 
                         </div>
                         <div className="d-flex w-100 justify-content-between">
-                            <small className="col-lg-6">Credit: {item['Credit']}</small>
-                            <small className="col-lg-6">Two year program: {item['Two']}</small>
+                            <small className="col-lg-6">Credit: {item['for_credit'].toString()}</small>
+                            <small className="col-lg-6">Two year program: {item['two_year'].toString()}</small>
                         </div>
                         <br/>
-                        <p className="mb-1 col-lg-12">{item['Description']}</p>
+                        <p className="mb-1 col-lg-12">{item['short_desc']}</p>
                     </div>
                 )}
             </div>
