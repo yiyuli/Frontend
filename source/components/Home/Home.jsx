@@ -9,7 +9,7 @@ class Home extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            data: JSON.parse("[{'Name': 'UIC', 'Credit': 'No', 'Four': 'No', 'Two': 'No', 'State': 'Illinois', 'Art': 'No', 'Description': 'sss'}]"),
+            data: JSON.parse("[{\"Name\": \"UIC\", \"Credit\": \"No\", \"Four\": \"No\", \"Two\": \"No\", \"State\": \"Illinois\", \"Art\": \"No\", \"Description\": \"sss\"}]"),
             loading: false,
             selectedState: 'State',
             selectedDegree: 'Degree',
@@ -54,7 +54,7 @@ class Home extends Component {
                     <div className="ui text loader">Loading</div>
                 </div>
         }
-        print(this.state.data)
+        console.log(this.state.data);
         return (
             <div >
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -132,63 +132,14 @@ class Home extends Component {
                             </div>
 
                             <div className="list-group ad-item-groups">
-                                {/*<Items*/}
-                                    {/*data={this.state.data}*/}
-                                    {/*selectedCredit={this.state.selectedCredit}*/}
-                                    {/*selectedDegree={this.state.selectedDegree}*/}
-                                    {/*selectedState={this.state.selectedState}*/}
-                                {/*/>*/}
+                                <Items
+                                    data={this.state.data}
+                                    selectedCredit={this.state.selectedCredit}
+                                    selectedDegree={this.state.selectedDegree}
+                                    selectedState={this.state.selectedState}
+                                />
 
-                                <div
-                                    className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <h6 className="mb-1 col-lg-6">UIUC Education Justice Program</h6>
-                                        <small className="col-lg-6">Credit: No</small>
-                                    </div>
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <small className="mb-1 col-lg-6">Illinois</small>
-                                        <small className="col-lg-6">Degree: N/A</small>
-                                    </div>
-                                    <br/>
-                                    <p className="mb-1 col-lg-12 ad-desc">Information: Donec id elit non mi porta
-                                        gravida at eget metus. Maecenas sed diam eget risus
-                                        varius blandit.</p>
-                                </div>
-                                <div
-                                    className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <h6 className="mb-1 col-lg-6">UIC Education Justice Program</h6>
-                                        <small className="col-lg-6">Arts and others: No</small>
-                                    </div>
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <small className="mb-1 col-lg-6">Illinois</small>
-                                        <small className="col-lg-6">Four year program: Yes</small>
 
-                                    </div>
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <small className="col-lg-6">Degree: Bachelor</small>
-                                        <small className="col-lg-6">two year program: No</small>
-                                    </div>
-                                    <br/>
-                                    <p className="mb-1 col-lg-12">Donec id elit non mi porta gravida at eget metus.
-                                        Maecenas sed diam eget risus
-                                        varius blandit.</p>
-                                </div>
-                                <div
-                                    className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <h6 className="mb-1 col-lg-6">UIS Education Justice Program</h6>
-                                        <small className="col-lg-6">Credit: Yes</small>
-                                    </div>
-                                    <div className="d-flex w-100 justify-content-between">
-                                        <small className="mb-1 col-lg-6">Illinois</small>
-                                        <small className="col-lg-6">Degree: Associate</small>
-                                    </div>
-                                    <br/>
-                                    <p className="mb-1 col-lg-12">Donec id elit non mi porta gravida at eget metus.
-                                        Maecenas sed diam eget risus
-                                        varius blandit.</p>
-                                </div>
                             </div>
                         </div>
                     </div>
