@@ -1,0 +1,23 @@
+.ad_img {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+}
+.search-row {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.ad_item {
+    border-radius: 0.25rem;
+}
+.ad-item-groups{
+    padding-bottom: 20px;
+}
+.ad-desc {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.search-bar {
+    border-radius: 0.25rem;
+}
