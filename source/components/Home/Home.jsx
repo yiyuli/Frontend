@@ -15,6 +15,7 @@ class Home extends Component {
             selectedDegree: 'Degree',
             selectedCredit: 'Credit'
         };
+        this.handleStateChange = this.handleStateChange.bind(this);
     }
 
     // componentWillMount() {
@@ -30,7 +31,7 @@ class Home extends Component {
     // }
 
     handleStateChange(changeEvent) {
-        this.setState = ({
+        this.setState ({
             selectedState: changeEvent.target.value
         })
     }
@@ -51,10 +52,9 @@ class Home extends Component {
         if (this.state.loading) {
             return
                 <div >
-                    <div className="ui text loader">Loading</div>
+                    <div>Loading</div>
                 </div>
         }
-        console.log(this.state.data);
         return (
             <div >
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -131,7 +131,6 @@ class Home extends Component {
                                 </div>
                             </div>
 
-                            <div className="list-group ad-item-groups">
                                 <Items
                                     data={this.state.data}
                                     selectedCredit={this.state.selectedCredit}
@@ -139,8 +138,6 @@ class Home extends Component {
                                     selectedState={this.state.selectedState}
                                 />
 
-
-                            </div>
                         </div>
                     </div>
                 </div>

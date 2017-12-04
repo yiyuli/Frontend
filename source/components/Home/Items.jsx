@@ -20,11 +20,10 @@ class Items extends Component {
                 tmp.push(item);
             }
         });
-        console.log(data)
-        console.log(tmp)
         return (
-            <div>
-                {tmp.map((item) => {
+            <div className="list-group ad-item-groups">
+                {tmp.map((item) =>
+
                     <div
                         className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
                         <div className="d-flex w-100 justify-content-between">
@@ -43,7 +42,7 @@ class Items extends Component {
                         <br/>
                         <p className="mb-1 col-lg-12">{item['Description']}</p>
                     </div>
-                })}
+                )}
             </div>
         )
             ;
