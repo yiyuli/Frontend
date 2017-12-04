@@ -9,7 +9,7 @@ class Home extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            data: [],
+            data: JSON.parse("[{'Name': 'UIC', 'Credit': 'No', 'Four': 'No', 'Two': 'No', 'State': 'Illinois', 'Art': 'No', 'Description': 'sss'}]"),
             loading: false,
             selectedState: 'State',
             selectedDegree: 'Degree',
@@ -54,6 +54,7 @@ class Home extends Component {
                     <div className="ui text loader">Loading</div>
                 </div>
         }
+        print(this.state.data)
         return (
             <div >
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
