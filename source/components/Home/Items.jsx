@@ -19,11 +19,28 @@ class Items extends Component {
                 (item['Degree'] === selectedDegree || selectedDegree === 'Degree')) {
                 tmp.append(row);
             }
-        }
+        });
         return (
 
             tmp.map((item) => {
-                return
+                return <div
+                    className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
+                    <div className="d-flex w-100 justify-content-between">
+                        <h6 className="mb-1 col-lg-6">{item['Name']}</h6>
+                        <small className="col-lg-6">Arts and others: {item['Art']}</small>
+                    </div>
+                    <div className="d-flex w-100 justify-content-between">
+                        <small className="mb-1 col-lg-6">{item['State']}</small>
+                        <small className="col-lg-6">: {item['Four']}</small>
+
+                    </div>
+                    <div className="d-flex w-100 justify-content-between">
+                        <small className="col-lg-6">Credit: {item['Credit']}</small>
+                        <small className="col-lg-6">Two year program: {item['Two']}</small>
+                    </div>
+                    <br/>
+                    <p className="mb-1 col-lg-12">{item['Description']}</p>
+                </div>
             })
 
 

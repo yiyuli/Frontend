@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
+import Items from './Items.jsx'
 
 var axios = require('axios');
 
@@ -18,7 +19,7 @@ class Home extends Component {
 
     // componentWillMount() {
     //     this.setState({loading: true});
-    //     axios.get('').then(function (response) {
+    //     axios.get('localhost:5000/programs').then(function (response) {
     //         this.setState({
     //             loading: false,
     //             data: response
@@ -130,23 +131,42 @@ class Home extends Component {
                             </div>
 
                             <div className="list-group ad-item-groups">
-                                <Items
-                                    data={this.state.data}
-                                    selectedCredit={this.state.selectedCredit}
-                                    selectedDegree={this.state.selectedDegree}
-                                    selectedState={this.state.selectedState}
-                                />
-
+                                {/*<Items*/}
+                                    {/*data={this.state.data}*/}
+                                    {/*selectedCredit={this.state.selectedCredit}*/}
+                                    {/*selectedDegree={this.state.selectedDegree}*/}
+                                    {/*selectedState={this.state.selectedState}*/}
+                                {/*/>*/}
 
                                 <div
                                     className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
                                     <div className="d-flex w-100 justify-content-between">
-                                        <h6 className="mb-1 col-lg-6">UIC Education Justice Program</h6>
+                                        <h6 className="mb-1 col-lg-6">UIUC Education Justice Program</h6>
                                         <small className="col-lg-6">Credit: No</small>
                                     </div>
                                     <div className="d-flex w-100 justify-content-between">
                                         <small className="mb-1 col-lg-6">Illinois</small>
+                                        <small className="col-lg-6">Degree: N/A</small>
+                                    </div>
+                                    <br/>
+                                    <p className="mb-1 col-lg-12 ad-desc">Information: Donec id elit non mi porta
+                                        gravida at eget metus. Maecenas sed diam eget risus
+                                        varius blandit.</p>
+                                </div>
+                                <div
+                                    className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
+                                    <div className="d-flex w-100 justify-content-between">
+                                        <h6 className="mb-1 col-lg-6">UIC Education Justice Program</h6>
+                                        <small className="col-lg-6">Arts and others: No</small>
+                                    </div>
+                                    <div className="d-flex w-100 justify-content-between">
+                                        <small className="mb-1 col-lg-6">Illinois</small>
+                                        <small className="col-lg-6">Four year program: Yes</small>
+
+                                    </div>
+                                    <div className="d-flex w-100 justify-content-between">
                                         <small className="col-lg-6">Degree: Bachelor</small>
+                                        <small className="col-lg-6">two year program: No</small>
                                     </div>
                                     <br/>
                                     <p className="mb-1 col-lg-12">Donec id elit non mi porta gravida at eget metus.
