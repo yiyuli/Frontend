@@ -85,6 +85,7 @@ class Home extends Component {
                                 <li className="nav-item active">
                                     <a className="nav-link" href="#">Home
                                         <span className="sr-only">(current)</span>
+                                        <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
                                 <li className="nav-item">
@@ -110,9 +111,9 @@ class Home extends Component {
                                 <div className="col-lg-1">
                                     <select className="form-control" onChange={this.handleStateChange.bind(this)}>
                                         <option value="State" selected>State</option>
-                                        <option value="Illinois">Illinois</option>
-                                        <option value="California">California</option>
-                                        <option value="Texas">Texas</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="Wyoming">Wyoming</option>
+                                        <option value="NY">New York</option>
                                     </select>
                                 </div>
                                 <div className="col-lg-1">
@@ -149,7 +150,7 @@ class Home extends Component {
 
                                 <div className="col-lg-3">
                                     <div className="input-group search-bar">
-                                        <input type="text" className="form-control" placeholder="Search"/>
+                                        <input type="text" className="form-control" placeholder="Search" />
                                     </div>
                                 </div>
                             </div>

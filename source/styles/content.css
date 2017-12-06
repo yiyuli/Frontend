@@ -1,7 +1,8 @@
 .ad_img {
     padding-left: 0px;
     padding-right: 0px;
-    width: 100%;
+    width: auto;
+    height: auto;
 }
 .search-row {
     padding-top: 30px;
