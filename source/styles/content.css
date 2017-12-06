@@ -1,8 +1,8 @@
 .ad_img {
     padding-left: 0px;
     padding-right: 0px;
-    width: auto;
-    height: auto;
+    height:450px;
+    padding-top: 20px;
 }
 .search-row {
     padding-top: 30px;
@@ -21,4 +21,9 @@
 }
 .search-bar {
     border-radius: 0.25rem;
+}
+
+.img {
+    max-height:100%;
+    width:100%;
 }

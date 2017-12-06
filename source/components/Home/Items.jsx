@@ -15,12 +15,15 @@ class Items extends Component {
         var selectedArt = this.props.selectedArt;
         var selectedState = this.props.selectedState;
         var tmp = []
+        console.log(this.props.filterText)
         data.map((item) => {
             if ((item['for_credit'].toString() == selectedCredit || selectedCredit === 'Credit') &&
                 (item['state'] === selectedState || selectedState === 'State') &&
                 (item['four_year'].toString() == selectedFour || selectedFour === 'Four') &&
                 (item['arts_program'].toString() == selectedArt || selectedArt === 'Art') &&
-                (item['two_year'].toString() == selectedTwo || selectedTwo === 'Two')) {
+                (item['two_year'].toString() == selectedTwo || selectedTwo === 'Two') &&
+                ((item['name'].toLowerCase().indexOf(this.props.filterText.toLowerCase()) !== -1) || this.props.filterText === '')
+            ) {
                 if (item['for_credit'].toString() === 'true') {
                     item['for_credit'] = 'Yes'
                 } else {

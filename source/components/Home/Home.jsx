@@ -15,7 +15,8 @@ class Home extends Component {
             selectedTwo: 'Two',
             selectedFour: 'Four',
             selectedArt: 'Art',
-            selectedCredit: 'Credit'
+            selectedCredit: 'Credit',
+            filterText: ''
         };
         this.componentWillMount = this.componentWillMount.bind(this);
     }
@@ -63,6 +64,12 @@ class Home extends Component {
         })
     }
 
+    handleSearchChange() {
+        this.setState({
+            filterText: this.refs.filterTextInput.value
+        });
+    }
+
     render() {
         if (this.state.loading) {
             return(
@@ -82,18 +89,6 @@ class Home extends Component {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarResponsive">
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item active">
-                                    <a className="nav-link" href="#">Home
-                                        <span className="sr-only">(current)</span>
-                                        <span className="sr-only">(current)</span>
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">About</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">Services</a>
-                                </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">Contact</a>
                                 </li>
@@ -105,7 +100,7 @@ class Home extends Component {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="ad_img">
-                                <img src="https://i.imgur.com/hFIg1W1.jpg" className="img-responsive"/>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Map_of_USA_showing_state_names.png/1024px-Map_of_USA_showing_state_names.png" className="img"/>
                             </div>
                             <div className="row search-row">
                                 <div className="col-lg-1">
@@ -150,7 +145,7 @@ class Home extends Component {
 
                                 <div className="col-lg-3">
                                     <div className="input-group search-bar">
-                                        <input type="text" className="form-control" placeholder="Search" />
+                                        <input type="text" className="form-control" placeholder="Search" ref="filterTextInput" onChange={this.handleSearchChange.bind(this)} />
                                     </div>
                                 </div>
                             </div>
@@ -162,6 +157,7 @@ class Home extends Component {
                                     selectedState={this.state.selectedState}
                                     selectedFour={this.state.selectedFour}
                                     selectedArt={this.state.selectedArt}
+                                    filterText={this.state.filterText}
                                 />
 
                         </div>
