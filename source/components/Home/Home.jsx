@@ -23,7 +23,7 @@ class Home extends Component {
 
     componentWillMount() {
         this.setState({loading: true});
-        axios.get('http://localhost:5000/').then(function (response) {
+        axios.get('https://ejp-backend.herokuapp.com/https://ejp-backend.herokuapp.com/').then(function (response) {
             console.log(response);
             this.setState({
                 loading: false,
