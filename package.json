@@ -7,7 +7,7 @@
     "watch": "webpack -d --watch",
     "build": "webpack",
     "dev": "webpack-dev-server --content-base public/ --history-api-fallback",
-    "start": "webpack-dev-server --content-base public/ --history-api-fallback"
+    "start": "webpack-dev-server"
   },
   "author": "Yiyu Li",
   "license": "ISC",
