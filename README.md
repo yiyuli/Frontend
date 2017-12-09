@@ -1,4 +1,4 @@
-#Advertisement-Frontend
+# Advertisement-Frontend
 CS492 EJP project by Siddhartha Duri, Ally Henreid, Yiyu Li, Marcus Liljenberg, Kelly Mack, Kavya Varghese, Claire Zhang
 
 ## Get Started
@@ -14,3 +14,19 @@ run the server
 ```
 $ npm run dev
 ```
+
+## Todo List
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
+
+## Skills Needed
+* Unordered list can use asterisks
+* Unordered list can use asterisks
+* Unordered list can use asterisks
