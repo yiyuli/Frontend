@@ -16,17 +16,11 @@ $ npm run dev
 ```
 
 ## Todo List
-- [ ] Mercury
-- [x] Venus
-- [x] Earth (Orbit/Moon)
-- [x] Mars
-- [ ] Jupiter
-- [ ] Saturn
-- [ ] Uranus
-- [ ] Neptune
-- [ ] Comet Haley
+* map interface
+* set a limit to number of displayed rows
+* add search icon to search input
 
 ## Skills Needed
-* Unordered list can use asterisks
-* Unordered list can use asterisks
-* Unordered list can use asterisks
+* HTML/CSS/JavaScript
+* React
+* Webpack(not necessary)
