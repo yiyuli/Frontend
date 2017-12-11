@@ -11,14 +11,17 @@ class Items extends Component {
 
     }
     render() {
+        console.log(this.props.data)
         var data = this.props.data.slice(0);
+        console.log(data)
         var selectedCredit = this.props.selectedCredit;
         var selectedTwo = this.props.selectedTwo;
         var selectedFour = this.props.selectedFour;
         var selectedArt = this.props.selectedArt;
         var selectedState = this.props.selectedState;
         var tmp = []
-        console.log(this.props.filterText)
+        // console.log(selectedArt)
+        // console.log(data[0].arts_program.toString())
         data.map((item) => {
             if ((item['for_credit'].toString() == selectedCredit || selectedCredit === 'Credit') &&
                 (item['state'] === selectedState || selectedState === 'State') &&
