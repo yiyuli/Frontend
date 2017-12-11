@@ -23,8 +23,8 @@ class Home extends Component {
 
     componentWillMount() {
         this.setState({loading: true});
-        axios.get('https://ejp-backend.herokuapp.com').then(function (response) {
-            console.log(response);
+        axios.get('https://ejp-backend.herokuapp.com/').then(function(response) {
+            console.log(response.data);
             this.setState({
                 loading: false,
                 data: response.data
@@ -135,6 +135,7 @@ class Home extends Component {
                             </div>
 
                                 <Items
+                                    history={this.props.history}
                                     data={this.state.data}
                                     selectedCredit={this.state.selectedCredit}
                                     selectedTwo={this.state.selectedTwo}

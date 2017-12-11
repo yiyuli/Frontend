@@ -8,13 +8,12 @@ class Items extends Component {
         this.onItemClick = this.onItemClick.bind(this);
     }
 
-    onItemClick(id){
-    this.props.history.push('/Page'+id);
+    onItemClick(item){
+        console.log(item);
+    this.props.history.push('/Page'+item.id);
     }
     render() {
-        console.log(this.props.data)
-        var data = this.props.data.slice(0);
-        console.log(data)
+        var data = JSON.parse(JSON.stringify(this.props.data));
         var selectedCredit = this.props.selectedCredit;
         var selectedTwo = this.props.selectedTwo;
         var selectedFour = this.props.selectedFour;
@@ -62,20 +61,20 @@ class Items extends Component {
                 <div className="list-group ad-item-groups">
                     {tmp.map((item) =>
 
-                        <div key={item.id} onClick={(item) => this.onItemClick(item.id)}
+                        <div key={item.id} onClick={() => this.onItemClick(item)}
                             className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2 full">
                             <div className="d-flex w-100 justify-content-between">
                                 <h6 className="mb-1 col-lg-6">{item['name']}</h6>
-                                <small className="col-lg-6">Arts and others: {item['arts_program']}</small>
+                                <small className="col-lg-6">Arts and others: {item['arts_program'].toString()}</small>
                             </div>
                             <div className="d-flex w-100 justify-content-between">
                                 <small className="mb-1 col-lg-6">{item['state']}</small>
-                                <small className="col-lg-6">Four year program: {item['four_year']}</small>
+                                <small className="col-lg-6">Four year program: {item['four_year'].toString()}</small>
 
                             </div>
                             <div className="d-flex w-100 justify-content-between">
-                                <small className="col-lg-6">Credit: {item['for_credit']}</small>
-                                <small className="col-lg-6">Two year program: {item['two_year']}</small>
+                                <small className="col-lg-6">Credit: {item['for_credit'].toString()}</small>
+                                <small className="col-lg-6">Two year program: {item['two_year'].toString()}</small>
                             </div>
                             <br/>
                             <p className="mb-1 col-lg-12">{item['short_desc']}</p>
