@@ -12,8 +12,7 @@ class Page extends Component {
         this.componentWillMount = this.componentWillMount.bind(this)
     }
     componentWillMount() {
-
-        axios.get('http://localhost:5000/program/1').then(function (response) {
+        axios.get('http://localhost:5000/program/' + this.props.match.params.id).then(function (response) {
             console.log(response);
             this.setState({
                 data: response.data

@@ -15,14 +15,15 @@ class Home extends Component {
             selectedTwo: 'Two',
             selectedFour: 'Four',
             selectedArt: 'Art',
-            selectedCredit: 'Credit'
+            selectedCredit: 'Credit',
+            filterText: ''
         };
         this.componentWillMount = this.componentWillMount.bind(this);
     }
 
     componentWillMount() {
         this.setState({loading: true});
-        axios.get('http://localhost:5000/').then(function (response) {
+        axios.get('https://ejp-backend.herokuapp.com').then(function (response) {
             console.log(response);
             this.setState({
                 loading: false,
@@ -63,6 +64,12 @@ class Home extends Component {
         })
     }
 
+    handleSearchChange() {
+        this.setState({
+            filterText: this.refs.filterTextInput.value
+        });
+    }
+
     render() {
         if (this.state.loading) {
             return(
@@ -72,19 +79,20 @@ class Home extends Component {
         }
         return (
             <div >
+
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="ad_img">
-                                <img src="https://i.imgur.com/hFIg1W1.jpg" className="img-responsive"/>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Map_of_USA_showing_state_names.png/1024px-Map_of_USA_showing_state_names.png" className="img"/>
                             </div>
                             <div className="row search-row">
                                 <div className="col-lg-1">
                                     <select className="form-control" onChange={this.handleStateChange.bind(this)}>
                                         <option value="State" selected>State</option>
-                                        <option value="Illinois">Illinois</option>
-                                        <option value="California">California</option>
-                                        <option value="Texas">Texas</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="Wyoming">Wyoming</option>
+                                        <option value="NY">New York</option>
                                     </select>
                                 </div>
                                 <div className="col-lg-1">
@@ -121,7 +129,7 @@ class Home extends Component {
 
                                 <div className="col-lg-3">
                                     <div className="input-group search-bar">
-                                        <input type="text" className="form-control" placeholder="Search"/>
+                                        <input type="text" className="form-control" placeholder="Search" ref="filterTextInput" onChange={this.handleSearchChange.bind(this)} />
                                     </div>
                                 </div>
                             </div>
@@ -133,6 +141,7 @@ class Home extends Component {
                                     selectedState={this.state.selectedState}
                                     selectedFour={this.state.selectedFour}
                                     selectedArt={this.state.selectedArt}
+                                    filterText={this.state.filterText}
                                 />
 
                         </div>

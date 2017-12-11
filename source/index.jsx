@@ -20,7 +20,6 @@ require('./styles/shop-homepage.css');
 
 
 const BaseLayout = () => (
-    <div className="base">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div className="container">
                     <a className="navbar-brand" href="#">Start Bootstrap</a>
@@ -49,19 +48,18 @@ const BaseLayout = () => (
                     </div>
                 </div>
             </nav>
-        <div className="container-fluid">
-            <Route path="/" exact component={Home} />
-            <Route path="/page" component={Page} />
-        </div>
-        <footer>
-           Browser Example (c) 2017
-        </footer>
-    </div>
+
 )
 render(
-<Router>
+    <div className="full">
     <BaseLayout/>
-</Router>,
+<Router>
+    <div className="full">
+        <Route path="/" exact component={Home} />
+        <Route path="/page:id" component={Page} />
+    </div>
+</Router>
+    </div>,
 
     // Define your router and replace <Home /> with it!
     document.getElementById('app')
