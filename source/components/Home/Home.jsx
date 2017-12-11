@@ -90,9 +90,9 @@ class Home extends Component {
                                 <div className="col-lg-1">
                                     <select className="form-control" onChange={this.handleStateChange.bind(this)}>
                                         <option value="State" selected>State</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="Wyoming">Wyoming</option>
-                                        <option value="NY">New York</option>
+                                        <option value="IL">IL</option>
+                                        <option value="NM">NM</option>
+                                        <option value="AR">AR</option>
                                     </select>
                                 </div>
                                 <div className="col-lg-1">
