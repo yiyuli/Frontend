@@ -5,10 +5,11 @@ import {Link} from 'react-router-dom'
 class Items extends Component {
     constructor(props, context) {
         super(props, context);
+        this.onItemClick = this.onItemClick.bind(this);
     }
 
-    onItemClick(event){
-
+    onItemClick(id){
+    this.props.history.push('/Page'+id);
     }
     render() {
         var data = this.props.data.slice(0);
@@ -58,8 +59,8 @@ class Items extends Component {
                 <div className="list-group ad-item-groups">
                     {tmp.map((item) =>
 
-                        <div key={item.id}
-                            className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2">
+                        <div key={item.id} onClick={(item) => this.onItemClick(item.id)}
+                            className="list-group-item list-group-item-action flex-column align-items-start ad_item mb-2 full">
                             <div className="d-flex w-100 justify-content-between">
                                 <h6 className="mb-1 col-lg-6">{item['name']}</h6>
                                 <small className="col-lg-6">Arts and others: {item['arts_program']}</small>
