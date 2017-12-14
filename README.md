@@ -16,9 +16,10 @@ $ npm run dev
 ```
 
 ## Todo List
-* map interface
+* Create map interface
 * set a limit to number of displayed rows
 * add search icon to search input
+* Style the /Page so it looks better
 
 ## Skills Needed
 * HTML/CSS/JavaScript
@@ -26,7 +27,4 @@ $ npm run dev
 * Webpack(not necessary)
 
 ## Layout
-The layout of this project is quite simple. You handle the routing in the index.jsx file. Then in normal react fashon the only code you have to worry about is inside the component file. 
-
-## Install
-To install run "npm install" and then to run the app simply run "npm run dev"
+The layout of this project is quite simple. You handle the routing in the index.jsx file. Then in normal react fashon the only code you have to worry about is inside the component file. You use npm or yarn to automaticaly create dependencies. There might be a need to create a server.js for production ready site, we recomend using nodejs with express for this.
