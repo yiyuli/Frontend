@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Button} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
+require('./Page.scss');
+
 var axios = require('axios');
 
 class Page extends Component {
@@ -28,6 +30,7 @@ class Page extends Component {
         var state = this.state.data.state;
         var desc = this.state.data.long_desc;
         var website = this.state.data.website;
+        var contact = this.state.data.contact;
         if(this.state.data =''){
             return (<h1>No data</h1>);
         }
@@ -49,11 +52,15 @@ class Page extends Component {
         }
         console.log(list);
         return(
-        <div className="container full">
-            <div className="row">
-                <div className="col-md-10">
-                    <h1>{name} , {state}</h1>
+        <div className="container page-full">
+            <div className="row info-container">
+                <div className="col-md-1">
+                    </div>
+                <div className="col-md-6">
+                    <h1>{name} </h1>
+                    <p>{state}</p>
                     <a src={website}>{website}</a>
+                    <p>Contact: {contact}</p>
                    <ul>
                     {list.map((item) =>
                     item
@@ -61,8 +68,11 @@ class Page extends Component {
                    </ul>
                     <p>{desc}</p>
                 </div>
-                <aside className="float-right col-md-2">
-                    <div  />
+                <div className="col-md-4">
+                    <img src="https://i.pinimg.com/originals/25/e9/65/25e9653188c2421fe384f6bbe2734fac.jpg" className="img"  />
+
+                </div>
+                <aside className="float-right col-md-1 aside">
                 </aside>
             </div>
         </div>

@@ -5,6 +5,7 @@ import Items from './Items.jsx'
 
 var axios = require('axios');
 
+
 class Home extends Component {
     constructor(props, context) {
         super(props, context);

@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack -d --watch",
     "build": "webpack",
-    "dev": "webpack-dev-server --port process.env.PORT",
+    "dev": "webpack-dev-server",
     "start": "npm run dev"
   },
   "author": "Yiyu Li",

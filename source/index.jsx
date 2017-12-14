@@ -22,7 +22,7 @@ require('./styles/shop-homepage.css');
 const BaseLayout = () => (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div className="container">
-                    <a className="navbar-brand" href="#">Start Bootstrap</a>
+                    <a className="navbar-brand" href="#">EJP Prototype</a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarResponsive"
                             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
